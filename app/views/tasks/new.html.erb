@@ -1,0 +1,9 @@
+<h1>新規投稿</h1>             
+<%= form_with model: @task do |f| %>
+    <div class="field">
+        <%= f.label :タスク名 %>
+        <%= f.text_field :name %>
+    </div>
+    <br>
+    <%= f.submit :作成 %>
+<% end %>
