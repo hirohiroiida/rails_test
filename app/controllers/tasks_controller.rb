@@ -9,12 +9,8 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-
-    
-
     @task.save 
     redirect_to "/tasks/#{@task.id}"
-
   end
 
   def task_params
