@@ -60,3 +60,5 @@ gem 'pry-rails'
 gem 'rails_admin', '~> 2.0.0.beta'
 
 gem 'rails-i18n'
+
+gem 'bootstrap'

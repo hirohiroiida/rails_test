@@ -1,10 +1,14 @@
 class TasksController < ApplicationController
+  def index
+    @tasks = Task.all
+  end
+
   def new
     @task = Task.new
   end
 
-  def index
-    @tasks = Task.all
+  def show
+    @task = Task.find(params[:id])
   end
 
   def create
@@ -13,13 +17,23 @@ class TasksController < ApplicationController
     redirect_to "/tasks/#{@task.id}"
   end
 
+  def edit
+    
+  end
+
+  def apdate
+
+  end
+
+  def destroy
+    
+  end
+
   def task_params
     params.require(:task).permit(:name)
   end
 
-  def show
-    @task = Task.find(params[:id])
-  end
+  
 end
 
 
