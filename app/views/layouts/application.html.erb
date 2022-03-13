@@ -11,6 +11,29 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Taskleaf</a>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <% if flash[:notice] %>
+        <div class="alert alert-primary" role="alert">
+          <p><%= notice %></p>
+        </div>
+      <% end %>
+      
+      <% if flash[:alert] %>
+        <div class="alert alert-primary" role="alert">
+          <p><%= alert %></p>
+        </div>
+      <% end %>
+
+      <%= yield %>
+    </div>
+
+    
   </body>
 </html>
