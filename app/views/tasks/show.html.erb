@@ -1,3 +1,29 @@
-<h1>詳細画面</h1>
+<h1>タスクの詳細</h1>
+<%= link_to '投稿一覧', tasks_path, class: 'btn btn-primary' %>
+<%= link_to '編集', edit_task_path ,class: 'btn btn-primary' %>
+<%= link_to '削除', @task, method: :delete, data: { confirm: "タスク『#{@task.name}』を削除します。よろしいですか？"}, class: 'btn btn-primary' %>
 
-<%= @task.name %>
+<table class="table">
+  <tbody>
+    <tr>
+      <th><%= Task.human_attribute_name :id %></th>
+      <td><%= @task.id %></td>
+    </tr>
+    <tr>
+      <th><%= Task.human_attribute_name :name %></th>
+      <td><%= @task.name %></td>
+    </tr>
+    <tr>
+      <th><%= Task.human_attribute_name :description %></th>
+      <td><%= simple_format(h(@task.description), {}, sanitize: false, wrapper_tag: "div") %></td>
+    </tr>
+    <tr>
+      <th><%= Task.human_attribute_name :created_at %></th>
+      <td><%= @task.created_at %></td>
+    </tr>
+    <tr>
+      <th><%= Task.human_attribute_name :updated_at %></th>
+      <td><%= @task.updated_at %></td>
+    </tr>
+  </tbody>
+</table>

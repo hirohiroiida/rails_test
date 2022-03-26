@@ -1,11 +1,9 @@
-<h1>新規投稿</h1>             
-<%= form_with model: @task do |f| %>
-    <div class="field">
-        <%= f.label :タスク名 %>
-        <%= f.text_field :name %>
+<div class="container-fluid">
+    <h1>タスクの新規投稿</h1>
+    <div class= "nav.justify-content-end">
+        <%= link_to '投稿一覧へ', tasks_path, class: 'nav-link' %>
     </div>
-    <br>
-    <%= f.submit :作成 %>
-<% end %>
 
-<%= link_to '投稿一覧へ', tasks_path %>
+    <%= render partial: 'form',locals: {task: @task } %>
+    
+</div>
